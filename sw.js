@@ -1,16 +1,16 @@
-/* TopicsDigester service worker (app version 1.1)
+/* TopicsDigester service worker (app version 1.2)
    - Page files: network first, so updates arrive as soon as the visitor is online; saved copy when offline.
    - Public story lists (/api/articles, /api/catalogue): network first with a saved copy, marked with X-Offline-Copy.
    - Never saves translations, owner pages or anything else: POST and all other addresses go straight to the network.
    Bump VERSION when this file or the list of files changes. */
-const VERSION = '1.1';
+const VERSION = '1.2';
 const STATIC = 'td-static-' + VERSION;
 const DATA = 'td-data';
-const FILES = ['./', 'index.html', 'manifest.webmanifest', 'icon-192.png', 'icon-512.png', 'icon-maskable-512.png', 'apple-touch-icon.png'];
+const FILES = ['./', 'index.html', 'config.js', 'hamdelan-theme.css', 'manifest.webmanifest', 'icon-192.png', 'icon-512.png', 'icon-maskable-512.png', 'apple-touch-icon.png'];
 const DATA_PATHS = ['/api/articles', '/api/catalogue'];
 const OFFLINE_HTML = '<!doctype html><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>TopicsDigester</title>' +
-  '<body style="font:18px/1.5 Georgia,serif;background:#F4EDE1;color:#2B2927;margin:0;padding:32px;max-width:560px">' +
-  '<h1 style="color:#B5532F">You are offline</h1><p>TopicsDigester could not load and no saved copy is on this device yet. ' +
+  '<body style="font:18px/1.5 Georgia,serif;background:#FFFDF7;color:#2B2927;margin:0;padding:32px;max-width:560px">' +
+  '<h1 style="color:#0B2A52">You are offline</h1><p>TopicsDigester could not load and no saved copy is on this device yet. ' +
   'Connect to the internet and open it again; after one visit it can show your last stories without a connection.</p></body>';
 
 self.addEventListener('install', e => {
