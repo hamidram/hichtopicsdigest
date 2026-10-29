@@ -1,0 +1,23 @@
+@import url("https://fonts.googleapis.com/css2?family=Fraunces:wght@600;700&family=Inter:wght@400;600;700&family=Vazirmatn:wght@400;600&display=swap");
+:root{--navy:#0b2a52;--gold:#c08a1e;--cream:#fffdf7;--sand:#f6ecda;--ink:#1c2430;--link:#1a6fa8;--line:#eadfc6;
+  --radius:12px;--font:"Inter","Vazirmatn",system-ui,sans-serif;--display:"Fraunces","Vazirmatn",Georgia,serif}
+body{font-family:var(--font);color:var(--ink);background:var(--cream);margin:0}
+a{color:var(--link)} :focus-visible{outline:3px solid var(--gold);outline-offset:2px}
+:lang(fa),[dir=rtl]{font-family:"Vazirmatn",var(--font)}
+button,.btn{background:var(--navy);color:#fff;border:0;border-radius:8px;padding:.7rem 1.1rem;font:600 1rem var(--font);cursor:pointer;text-decoration:none}
+button:hover,.btn:hover{background:#12407d}
+h1,h2,h3{font-family:var(--display);color:var(--navy)}
+
+/* Community layout (Original layout keeps the app's own structure, with colours/fonts above only) */
+[data-layout=community] .hd-header{position:sticky;top:0;z-index:10;display:flex;align-items:center;gap:.9rem;padding:.6rem 1.25rem;background:#fff;border-bottom:3px solid var(--gold)}
+[data-layout=community] .hd-logo img{height:54px;width:54px;object-fit:contain;display:block}
+[data-layout=community] .hd-title{font:700 1.15rem var(--display);color:var(--navy);line-height:1.2}
+[data-layout=community] .hd-title small{display:block;font:400 .8rem var(--font);color:#55606f}
+[data-layout=community] .hd-nav{margin-left:auto;display:flex;gap:.75rem}
+[data-layout=community] .hd-nav a{color:var(--navy);font-weight:600;text-decoration:none;padding:.4rem .7rem;border-radius:8px}
+[data-layout=community] .hd-nav a:hover{background:var(--sand)}
+[data-layout=community] #hd-app{max-width:1100px;margin:0 auto;padding:1.5rem 1.25rem 3rem}
+[data-layout=community] #hd-app :is(section,article,.card,.panel){background:#fff;border:1px solid var(--line);border-left:4px solid var(--gold);border-radius:var(--radius);padding:1rem 1.25rem;margin:0 0 1rem}
+[data-layout=community] .hd-footer{background:var(--sand);border-top:1px solid var(--line);padding:1.25rem;text-align:center;font-size:.9rem}
+[data-layout=original] .hd-header,[data-layout=original] .hd-footer{display:none}
+@media(max-width:640px){[data-layout=community] .hd-nav{display:none}}
